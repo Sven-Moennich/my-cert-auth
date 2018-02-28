@@ -1,6 +1,17 @@
 #!/bin/bash
-set -u #no use of undeclared vars
 set -e #exit on error
+
+# default input for first arg
+echo "..."
+echo "..."
+if [ $# -eq 0 ]; then
+    echo "This session will include root cert creation..."
+    set -- "root" 
+else
+    echo "Skipping root cert creation..."
+fi
+echo "..."
+echo "..."
 
 # SSL / https setup completion - proof of concept:
 
